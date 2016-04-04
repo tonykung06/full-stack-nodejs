@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+html
+	head
+		title= "Hot Pie - " + title
+		link(rel='stylesheet', href='/stylesheets/#{stylesheet}.css')/
+	body
+		#header
+			h1= title
+		- var flashTypes = ['info', 'error']
+		while message = flash.shift()
+			if flashTypes.indexOf(message.type) > -1
+				p.flash(class=message.type)
+					= message.message
+		block content
