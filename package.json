@@ -6,7 +6,7 @@
     "redis-server": "C:/redis/redis-server.exe C:/redis/redis.windows.conf",
     "redis-client": "C:/redis/redis-cli.exe",
     "start": "SET DEBUG=full-stack-nodejs:* & node-dev ./bin/www",
-    "test": "mocha test/_helper.js test/apps/*.coffee"
+    "test": "mocha test/_helper.js test/**/*.coffee"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -15,11 +15,13 @@
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "express-namespace": "^0.1.1",
     "express-session": "^1.13.0",
     "flash": "^1.1.0",
     "hiredis": "^0.4.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
+    "redis": "^2.6.0-1",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {

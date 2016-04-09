@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var flash = require('flash');
+require('express-namespace');
 
 var app = express();
 
@@ -29,7 +30,9 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes
+require('./apps/helpers')(app);
 require('./apps/authentication/routes')(app);
+require('./apps/admin/routes')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
