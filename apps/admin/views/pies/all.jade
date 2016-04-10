@@ -1,3 +1,6 @@
 extends ../../../../views/layout
 block content
+	ul#listing
+		each pie in pies
+			li(class=pie.type)= pie.name
 	include _form

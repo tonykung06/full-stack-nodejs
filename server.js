@@ -26,6 +26,7 @@ app.use(session({
   secret: 'agfsgsfgsdfbnbnbvswf12gsdgsdghsdfg',
   store: new RedisStore()
 }));
+app.use(require('connect-assets')());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./apps/helpers')(app);
 require('./apps/authentication/routes')(app);
 require('./apps/admin/routes')(app);
+require('./apps/user/routes')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

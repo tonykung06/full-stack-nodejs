@@ -1,0 +1,11 @@
+li.pipin-hot {
+	background-color: red;
+}
+
+li.hot {
+	background-color: orange;
+}
+
+li.warm {
+	background-color: yellow;
+}

@@ -12,3 +12,6 @@ html
 				p.flash(class=message.type)
 					= message.message
 		block content
+
+		script(src="/socket.io/socket.io.js")
+		!= js('application')
